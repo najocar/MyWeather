@@ -1,0 +1,19 @@
+@if(data && data.days.length>0){
+    <div class="horizontal">
+    @for(day of data.days; track day.date){
+        <mat-card class="example-card scrollable-content">
+            <mat-card-header>
+            <mat-card-title>{{day.date}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="day.weather.condition.icon" alt="">
+            <mat-card-content>
+            <p>
+                {{day.weather.mintemp}}ºC - {{day.weather.maxtemp}}ºC
+            </p>
+            </mat-card-content>
+        </mat-card>
+    }
+    </div>
+}@else{
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
